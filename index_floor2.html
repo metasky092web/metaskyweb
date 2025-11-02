@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大耘 MetaSky｜共享辦公室・會議室・虛擬辦公室</title>
+  <style>
+    :root { --brand-bg:#202a3d; --brand-cta:#f24b2c; --brand-accent:#d48b2f; --text-main:#111827; --text-invert:#e5e7eb; --line:#e5e7eb; --card-edge:#e5e7eb; --card-soft:#ffffff; --bg-soft:#f5f7fa; --nav-h:60px; }
+    html { scroll-behavior:smooth; } *{ box-sizing:border-box; } body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text-main); background:var(--bg-soft); }
+    header,section,footer{ padding:44px 20px; } .container{ max-width:1100px; margin:0 auto; }
+    .nav{ position:fixed; inset:0 0 auto 0; height:var(--nav-h); display:flex; align-items:center; gap:18px; padding:0 16px; background:rgba(32,42,61,.92); color:var(--text-invert); z-index:1000; backdrop-filter:blur(10px); }
+    .nav a{ color:var(--text-invert); text-decoration:none; font-weight:700; } .brand{ margin-right:auto; letter-spacing:.4px; }
+    header.hero{ background:var(--brand-bg); color:var(--text-invert); padding-top:calc(44px + var(--nav-h)); text-align:center; }
+    header.hero h1{ font-size:2.4em; margin:0 0 12px; color:#fff; } header.hero p{ margin:0 0 10px; opacity:.95; }
+    .cta{ display:inline-flex; gap:10px; margin-top:14px; flex-wrap:wrap; } .btn{ padding:10px 16px; border-radius:10px; border:2px solid transparent; font-weight:800; text-decoration:none; display:inline-block; }
+    .btn-primary{ background:var(--brand-cta); color:#fff; } .btn-outline{ background:transparent; color:var(--brand-accent); border-color:var(--brand-accent); }
+    .section-title{ text-align:center; font-size:2em; margin:0 0 18px; scroll-margin-top:calc(var(--nav-h) + 16px); }
+    .band{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .grid{ display:grid; gap:20px; } .grid-2{ grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); } .grid-4{ grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); }
+    .card{ background:var(--card-soft); border:1px solid var(--card-edge); border-radius:14px; padding:0; overflow:hidden; }
+    .card .content{ padding:16px 20px; } .icon{ width:56px; height:56px; border-radius:50%; background:var(--brand-accent); margin:0 0 10px 0; }
+    .service-img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; background:#e5e7eb; }
+    /* Photo wall */
+    #photos .photo-track { display:flex; gap:12px; overflow-x:auto; padding:8px 4px 16px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+    #photos figure.card { min-width:320px; width:48%; max-width:520px; border-radius:14px; overflow:hidden; scroll-snap-align:start; }
+    #photos figcaption { padding:.75rem 1rem; color:#475569; }
+    #photos .photo-label{ display:inline-block; font-weight:800; letter-spacing:.2px; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(0,0,0,.08); background:#fff; color:#334155; margin:4px 0 10px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top">大耘 MetaSky</a>
+    <a href="#services">空間與服務</a>
+    <a href="#photos">空間照片</a>
+    <a href="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" target="_blank" rel="noopener">LINE</a>
+  </nav>
+
+  <a id="top"></a>
+  <header class="hero">
+    <div class="container">
+      <h1>大耘 MetaSky</h1>
+      <p>共享辦公室｜會議室租借｜虛擬辦公室｜借址登記｜日租空間｜時租空間</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ18woc2ZGL7AiQmSN-pFVrMJDXfS0BFw9xVPCcYYYJYSWTkw5mggCke_5z4R8KSyZGdhyMFmgty" target="_blank" rel="noopener">開始預約</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services" class="band">
+    <div class="container">
+      <h2 class="section-title">空間與服務</h2>
+      <div class="grid grid-4">
+        <div class="card"><img class="service-img" src="assets/photos/space-01.jpg" alt="一樓｜開放式共享辦公區"><div class="content"><div class="icon"></div><h3>共享辦公室</h3><p class="muted">開放式工位／彈性入座</p></div></div>
+        <div class="card"><img class="service-img" src="assets/photos/space-06.jpg" alt="一樓｜協作座位"><div class="content"><div class="icon"></div><h3>中大型會議室</h3><p class="muted">投影設備・白板・視訊會議</p></div></div>
+        <div class="card"><img class="service-img" src="assets/photos/space-02.jpg" alt="一樓｜暖身與伸展區"><div class="content"><div class="icon"></div><h3>Cheer/Dance & Wellness</h3><p class="muted">啦啦隊／練舞・團隊暖身・員工健康</p></div></div>
+        <div class="card"><img class="service-img" src="assets/photos/space-07.jpg" alt="一樓｜臨街落地窗"><div class="content"><div class="icon"></div><h3>虛擬辦公室</h3><p class="muted">公司登記・郵件代收・轉接</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="container">
+      <h2 class="section-title">Spaces &amp; Services — Photo Wall</h2>
+      <p class="muted" style="text-align:center; margin:-6px 0 12px;">Swipe to browse. 所有圖片皆為實景拍攝。</p>
+
+      <div class="photo-label">一樓共享空間</div>
+      <div class="photo-track">
+        <figure class="card"><img src="assets/photos/space-01.jpg" alt="一樓｜開放式共享辦公區" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Open Desk Zone</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-02.jpg" alt="一樓｜雙色卡座＋分隔側板" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Dual booth seating</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-03.jpg" alt="一樓｜綠色長椅卡座" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth bench</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-04.jpg" alt="一樓｜卡座左右分區" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth seating pair</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-05.jpg" alt="一樓｜卡座列與分隔" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth row</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-06.jpg" alt="一樓｜協作區雙椅與長桌" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Collaboration nook</figcaption></figure>
+        <figure class="card"><img src="assets/photos/space-07.jpg" alt="一樓｜臨街落地窗，自然採光" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Street‑front window</figcaption></figure>
+      </div>
+
+      <div class="photo-label">二樓照片（約 40 坪空間）</div>
+      <div class="photo-track">
+        <figure class="card"><img src="assets/photos/floor2-01.jpg" alt="二樓｜全景 A" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜全景 A</figcaption></figure>
+        <figure class="card"><img src="assets/photos/floor2-02.jpg" alt="二樓｜窗景與空間 B" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜窗景與空間 B</figcaption></figure>
+        <figure class="card"><img src="assets/photos/floor2-03.jpg" alt="二樓｜窗邊長景 C" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜窗邊長景 C</figcaption></figure>
+        <figure class="card"><img src="assets/photos/floor2-04.jpg" alt="二樓｜全景 D" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜全景 D</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#111827; color:#e5e7eb; text-align:center;">
+    <div class="container">
+      <p>© 2025 大耘 MetaSky</p>
+    </div>
+  </footer>
+</body>
+</html>
