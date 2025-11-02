@@ -3,325 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大耘 MetaSky｜共享辦公室・會議室・虛擬辦公室</title>
-  <meta name="description" content="大耘 MetaSky｜共享辦公室、會議室租借、虛擬辦公室、借址登記、日租與時租工位。桃園 A17 捷運站前，交通便利、空間彈性、商務支援。">
+  <title>MetaSky 二樓照片（約 40 坪）</title>
   <style>
-    :root {
-      --brand-bg: #202a3d;   /* 深藍灰 */
-      --brand-cta: #f24b2c;  /* 橘紅（主要 CTA） */
-      --brand-accent: #d48b2f; /* 橙金（強調） */
-      --text-main: #111827;  /* 主文字 */
-      --text-invert: #e5e7eb;
-      --line: #e5e7eb;
-      --card-edge: #e5e7eb;
-      --card-soft: #ffffff;
-      --bg-soft: #f5f7fa;
-      --nav-h: 60px;
-    }
-    html { scroll-behavior: smooth; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color: var(--text-main); background: var(--bg-soft); }
-    header, section, footer { padding: 44px 20px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    /* Navbar */
-    .nav { position: fixed; inset: 0 0 auto 0; height: var(--nav-h); display:flex; align-items:center; gap:18px; padding:0 16px; background: rgba(32,42,61,.92); color: var(--text-invert); z-index:1000; backdrop-filter: blur(10px); }
-    .nav a { color: var(--text-invert); text-decoration:none; font-weight:700; }
-    .brand { margin-right:auto; letter-spacing:.4px; }
-    /* Hero */
-    header.hero { background: var(--brand-bg); color: var(--text-invert); padding-top: calc(44px + var(--nav-h)); text-align:center; }
-    header.hero h1 { font-size: 2.4em; margin: 0 0 12px; color: #ffffff; }
-    header.hero p { margin: 0 0 10px; opacity: .95; }
-    .cta { display:inline-flex; gap:10px; margin-top:14px; flex-wrap: wrap; }
-    .btn { padding: 10px 16px; border-radius: 10px; border: 2px solid transparent; font-weight: 800; text-decoration: none; display:inline-block; }
-    .btn-primary { background: var(--brand-cta); color: #fff; }
-    .btn-outline { background: transparent; color: var(--brand-accent); border-color: var(--brand-accent); }
-    .btn-primary:hover { filter: brightness(1.05); }
-    .btn-outline:hover { background: color-mix(in oklab, var(--brand-accent) 12%, #fff); }
-    /* Sections */
-    .section-title { text-align:center; font-size: 2em; margin: 0 0 18px; scroll-margin-top: calc(var(--nav-h) + 16px); }
-    .band { background: #ffffff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-    .grid { display:grid; gap: 20px; }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .card { background: var(--card-soft); border:1px solid var(--card-edge); border-radius:14px; padding:20px; }
-    .icon { width:56px; height:56px; border-radius:50%; background: var(--brand-accent); margin:0 auto 10px; }
-    .muted { opacity:.8; }
-    /* Tables */
-    .price-table { width:100%; border-collapse: collapse; font-size: 15px; }
-    .price-table th, .price-table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,.08); text-align:left; }
-    .price-table thead th { background: rgba(0,0,0,.06); font-weight: 800; }
-    .price-table tr:nth-child(even) td { background: rgba(0,0,0,.03); }
-    /* Floating Contact */
-    .fab { position: fixed; right: 16px; bottom: 16px; display:grid; gap:10px; z-index:1002; }
-    .fab a { display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:800; border-radius:999px; padding:10px 14px; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
-    .fab .line { background:#06C755; color:#fff; }
-    .fab .tel { background: var(--brand-cta); color:#fff; }
-    .fab .qr  { background:#ffffff; color: var(--brand-bg); border:1px solid rgba(0,0,0,.12); }
-    .fab svg { width:18px; height:18px; }
-    .fab svg { width:18px; height:18px; }
-    /* iframe */
-    .iframe-wrap { border-radius: 14px; overflow:hidden; border:1px solid var(--line); }
-    .iframe-wrap iframe { width:100%; height:420px; border:0; }
-    footer { background:#111827; color:#e5e7eb; text-align:center; }
-
-    /* Photo wall */
-    #photos .photo-track { display:flex; gap:12px; overflow-x:auto; padding:8px 4px 16px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
-    #photos figure.card { min-width:320px; width:48%; max-width:520px; border-radius:14px; overflow:hidden; scroll-snap-align:start; }
-    #photos figcaption { padding:.75rem 1rem; color:#475569; }
-    .qr-wrap{ text-align:center; }
-  .qr-wrap img{ width:min(240px, 60vw); height:auto; border:1px solid var(--line); border-radius:12px; background:#fff; }
-  .qr-wrap .hint{ color:#64748b; font-size:.95rem; margin-top:.5rem; }
+    :root{ --nav-h:56px; --ink:#111827; --muted:#475569; }
+    *{ box-sizing:border-box; } body{ margin:0; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); }
+    header,section{ padding:44px 20px; } .container{ max-width:1100px; margin:0 auto; }
+    .nav{ position:sticky; top:0; background:#fff; border-bottom:1px solid rgba(0,0,0,.08); height:var(--nav-h); display:flex; align-items:center; gap:18px; padding:0 16px; z-index:10; }
+    .nav a{ text-decoration:none; color:#111827; font-weight:700; }
+    h1{ margin:0; font-size:1.6rem; }
+    .section-title{ text-align:center; font-size:2rem; margin:0 0 12px; }
+    .muted{ color:var(--muted); }
+    /* 2F photo wall */
+    #photos-2f .photo-track { display:flex; gap:12px; overflow-x:auto; padding:8px 4px 16px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+    #photos-2f figure.card { min-width:320px; width:48%; max-width:520px; border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.08); background:#fff; scroll-snap-align:start; }
+    #photos-2f figcaption { padding:.75rem 1rem; color:#475569; }
+    #photos-2f img{ display:block; width:100%; height:auto; }
+    #photos-2f .photo-label{ display:inline-block; font-weight:800; letter-spacing:.2px; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(0,0,0,.08); background:#fff; color:#334155; margin:4px 0 10px; }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="nav">
-    <a class="brand" href="#top">大耘 MetaSky</a>
-    <a href="#services">空間與服務</a>
-    <a href="#pricing">價格</a>
-    <a href="#virtual">虛擬/借址</a>
-    <a href="#dayhour">日租時租</a>
-    <a href="#transport">交通位置</a>
-    <a href="#booking">線上預約</a>
-    <a href="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" target="_blank" rel="noopener">LINE</a>
+    <a href="#top">MetaSky</a>
+    <a href="#photos-2f">二樓照片</a>
   </nav>
 
-  <!-- 浮動聯絡按鈕 -->
-  <div class="fab">
-    <a class="line" href="https://line.me/R/ti/p/%40metasky" target="_blank" rel="noopener" title="LINE 聯絡我們">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.667 3.333H3.333A2.333 2.333 0 0 0 1 5.667v12.666A2.333 2.333 0 0 0 3.333 20.666h12l4.667 3.334V5.667A2.333 2.333 0 0 0 20.667 3.333zM8.5 12.5H6.333V8.833H5v5.334h3.5v-1.667zm3 .167H9.333V8.833H8v5.334h3.5v-1.5zM15 12.667h-2.167V8.833H11.5v5.334H15v-1.5zm3-.167h-2.167V8.833H14.5v5.334H18v-1.667z"/></svg>
-      LINE
-    </a>
-    <a class="qr" href="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" target="_blank" rel="noopener" title="開啟 LINE QR 圖片">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm10-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm8-2h8v2h-8v-2zm4 4h4v2h-4v-2zm-4 0h2v6h-2v-6z"/></svg>
-      LINE QR
-    </a>
-    <a class="tel" href="tel:032878260" title="撥打 03-2878260">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.464 15.464 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C11.85 22 2 12.15 2 1a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
-      撥打
-    </a>
-  </div>
-  </div>
-
   <a id="top"></a>
-  <header class="hero">
+  <header>
     <div class="container">
-      <h1>大耘 MetaSky</h1>
-      <p>共享辦公室｜會議室租借｜虛擬辦公室｜借址登記｜日租空間｜時租空間</p>
-      <p class="muted">桃園 A17 捷運站前．全新開放式工作基地<br>📍 桃園市大園區領航北路四段310號1樓</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">開始預約</a>
-      </div>
+      <h1>二樓照片（約 40 坪空間）</h1>
+      <p class="muted">Swipe / 滑動瀏覽；圖片放置於 <code>assets/photos/</code></p>
     </div>
   </header>
 
-  <section id="services" class="band">
+  <section id="photos-2f">
     <div class="container">
-      <h2 class="section-title">空間與服務</h2>
-      <div class="grid grid-4">
-        <div class="card"><div class="icon"></div><h3>共享辦公室</h3><p class="muted">開放式工位／彈性入座</p></div>
-        <div class="card"><div class="icon"></div><h3>中大型會議室</h3><p class="muted">投影設備・白板・視訊會議</p></div>
-        <div class="card">
-          <div class="icon"></div>
-          <h3>運動空間</h3>
-          <p class="muted" style="font-size:.92rem; margin-top:.35rem;">啦啦隊／社團練舞・工作團隊暖身・員工健康活動</p>
-        </div>
-        <div class="card"><div class="icon"></div><h3>虛擬辦公室</h3><p class="muted">公司登記・郵件代收・轉接</p></div>
-        <div class="card"><div class="icon"></div><h3>借址登記</h3><p class="muted">合法地址・合規文件支援</p></div>
-        <div class="card"><div class="icon"></div><h3>日租／時租工位</h3><p class="muted">按天／按時彈性選擇</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 新增：照片牆（Spaces & Services — Photo Wall） -->
-  <section id="photos">
-    <div class="container">
-      <h2 class="section-title">空間照片</h2>
-      <p class="muted" style="text-align:center; margin:-6px 0 12px;">舒適的空間與環境，彈性利用，明亮採光</p>
-
+      <h2 class="section-title">2F Space · 約 40 坪</h2>
+      <div class="photo-label">二樓 · Panorama</div>
       <div class="photo-track">
         <figure class="card">
-          <img src="assets/photos/space-01.jpg" alt="開放空間" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Open Desk Zone — adjustable desks</figcaption>
+          <img src="assets/photos/floor2-01.jpg" alt="二樓｜全景 A" loading="lazy">
+          <figcaption>二樓｜全景 A</figcaption>
         </figure>
         <figure class="card">
-          <img src="assets/photos/space-02.jpg" alt="舒適座椅" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Dual booth seating — navy & teal</figcaption>
+          <img src="assets/photos/floor2-02.jpg" alt="二樓｜窗景與空間 B" loading="lazy">
+          <figcaption>二樓｜窗景與空間 B</figcaption>
         </figure>
         <figure class="card">
-          <img src="assets/photos/space-03.jpg" alt="乾淨明亮" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Booth bench — lime green</figcaption>
+          <img src="assets/photos/floor2-03.jpg" alt="二樓｜窗邊長景 C" loading="lazy">
+          <figcaption>二樓｜窗邊長景 C</figcaption>
         </figure>
         <figure class="card">
-          <img src="assets/photos/space-04.jpg" alt="多個工位" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Booth seating pair — navy & teal</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/space-05.jpg" alt="多個工位" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Booth row with partitions</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/space-06.jpg" alt="舒適座椅可調整高度" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Collaboration nook — two chairs & table</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/space-07.jpg" alt="一樓全景" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;">
-          <figcaption>Street‑front window & natural light</figcaption>
+          <img src="assets/photos/floor2-04.jpg" alt="二樓｜全景 D" loading="lazy">
+          <figcaption>二樓｜全景 D</figcaption>
         </figure>
       </div>
-
-      <div style="display:flex; gap:.75rem; align-items:center; margin:.25rem 0 0; color:#64748b; font-size:.92rem;">
-        <span style="display:inline-block; width:8px; height:8px; background:var(--brand-accent); border-radius:50%;"></span>
-        滑動照片觀看 Swipe to browse — optimized for mobile.
-      </div>
     </div>
   </section>
-
-  <section id="pricing">
-    <div class="container">
-      <h2 class="section-title">價格一覽</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>共享辦公位（工位）</h3>
-          <table class="price-table">
-            <thead>
-              <tr><th>項目</th><th>費用</th><th>備註</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>時租</td><td>約 150–200 元（基準 150 元）</td><td>彈性入座；含高速 Wi‑Fi、咖啡</td></tr>
-              <tr><td>日租（8 小時）</td><td>1,000 元 / 天</td><td>含基本列印額度，會議室優惠時數</td></tr>
-              <tr><td>月租（自由座）</td><td>20,000 元 / 月</td><td>不含電；可加購會議室時數</td></tr>
-              <tr><td>長租折扣</td><td>9 折</td><td>適用於時租／日租／月租</td></tr>
-            </tbody>
-          </table>
-          <p class="muted" style="margin-top:8px;">＊實際金額與方案以現場／客服公告為準</p>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">預約工位</a></div>
-        </div>
-        <div class="card">
-          <h3>會議室租借（20–30 人）</h3>
-          <table class="price-table">
-            <thead>
-              <tr><th>時段</th><th>平日</th><th>假日</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>半日（4 小時）</td><td>6,000 元</td><td>8,000 元</td></tr>
-              <tr><td>全日（8 小時）</td><td>10,000 元</td><td>12,000 元</td></tr>
-            </tbody>
-          </table>
-          <p class="muted" style="margin-top:8px;">＊含基本會議設備；可加購投影與視訊</p>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">預約會議室</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="virtual" class="band">
-    <div class="container">
-      <h2 class="section-title">虛擬辦公室｜借址登記</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>虛擬辦公室</h3>
-          <ul>
-            <li>公司登記地址使用（合規合約）</li>
-            <li>郵件代收與通知，包裹代保管</li>
-            <li>企業專線轉接／語音信箱</li>
-            <li>會議室優惠時數與熱桌加購</li>
-            <li>月繳／季繳／年繳彈性合約</li>
-          </ul>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">諮詢方案</a></div>
-        </div>
-        <div class="card">
-          <h3>借址登記</h3>
-          <ul>
-            <li>合法場地使用證明與文件支援</li>
-            <li>變更登記流程協助、代辦配合</li>
-            <li>配合稅務／帳務顧問可轉介</li>
-            <li>需配合實際審核與法規</li>
-          </ul>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">取得合約範本</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="dayhour">
-    <div class="container">
-      <h2 class="section-title">日租與時租空間辦公位</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>日租（按天）</h3>
-          <ul>
-            <li>彈性使用 1–30 天，含高速 Wi‑Fi／咖啡</li>
-            <li>含基本列印額度，會議室優惠時數</li>
-            <li>適合差旅、短期專案、小型團隊</li>
-          </ul>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">預約日租</a></div>
-        </div>
-        <div class="card">
-          <h3>時租（按時）</h3>
-          <ul>
-            <li>以小時為單位，彈性安排上下線</li>
-            <li>含 Wi‑Fi／咖啡，臨時開會可加購會議室</li>
-            <li>適合自由接案、學生讀書、臨時辦公</li>
-          </ul>
-          <div style="margin-top:10px;"><a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">預約時租</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="transport" class="band">
-    <div class="container">
-      <h2 class="section-title">交通與位置優勢</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>黃金地段・交通優勢</h3>
-          <ul>
-            <li>📍 桃園市大園區領航北路四段310號1樓</li>
-            <li>🚈 桃園捷運 A17 體育園區站出站即達</li>
-            <li>✈️ 近機場、高鐵、青埔特區</li>
-            <li>🅿️ 周邊有停車場，通勤無憂</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>導航地圖</h3>
-          <div class="iframe-wrap">
-            <iframe src="https://www.google.com/maps?q=桃園市大園區領航北路四段310號1樓&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <div class="container">
-      <h2 class="section-title">線上預約</h2>
-      <div class="iframe-wrap">
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ18woc2ZGL7AiQmSN-pFVrMJDXfS0BFw9xVPCcYYYJYSWTkw5mggCke_5z4R8KSyZGdhyMFmgty" title="Google Calendar Appointment" loading="lazy"></iframe>
-      </div>
-      <p class="muted" style="text-align:center;">若上方未顯示，請 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ18woc2ZGL7AiQmSN-pFVrMJDXfS0BFw9xVPCcYYYJYSWTkw5mggCke_5z4R8KSyZGdhyMFmgty" target="_blank" rel="noopener">於新分頁開啟預約頁面</a>。</p>
-    </div>
-  </section>
-
-  <!-- LINE 加好友（QR） -->
-  <section id="line-qr" class="band">
-    <div class="container">
-      <h2 class="section-title">加入 LINE 咨詢</h2>
-      <div class="qr-wrap">
-        <a href="https://line.me/R/ti/p/%40metasky" target="_blank" rel="noopener" title="加入大耘 MetaSky 的 LINE">
-          <img src="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" alt="大耘 MetaSky LINE 官方帳號 QR Code">
-        </a>
-        <div class="hint">點擊或掃描 QR 加入好友：@metasky</div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>營業時間：每日 9:00 – 23:00（9am ~ 11pm） · Email：metasky092@gmail.com · 電話：03-2878260</p>
-      <p>© 2025 版權所有 · 大耘 MetaSky</p>
-    </div>
-  </footer>
 </body>
 </html>
