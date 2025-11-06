@@ -3,11 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MetaSky 二樓照片（約 40 坪）</title><!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>大耘 MetaSky｜共享辦公室・會議室・虛擬辦公室</title>
   <meta name="description" content="大耘 MetaSky｜共享辦公室、會議室租借、虛擬辦公室、借址登記、日租與時租工位。桃園 A17 捷運站前，交通便利、空間彈性、商務支援。">
   <style>
@@ -28,10 +23,12 @@
     body { margin:0; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color: var(--text-main); background: var(--bg-soft); }
     header, section, footer { padding: 44px 20px; }
     .container { max-width: 1100px; margin: 0 auto; }
+
     /* Navbar */
     .nav { position: fixed; inset: 0 0 auto 0; height: var(--nav-h); display:flex; align-items:center; gap:18px; padding:0 16px; background: rgba(32,42,61,.92); color: var(--text-invert); z-index:1000; backdrop-filter: blur(10px); }
     .nav a { color: var(--text-invert); text-decoration:none; font-weight:700; }
     .brand { margin-right:auto; letter-spacing:.4px; }
+
     /* Hero */
     header.hero { background: var(--brand-bg); color: var(--text-invert); padding-top: calc(44px + var(--nav-h)); text-align:center; }
     header.hero h1 { font-size: 2.4em; margin: 0 0 12px; color: #ffffff; }
@@ -42,6 +39,7 @@
     .btn-outline { background: transparent; color: var(--brand-accent); border-color: var(--brand-accent); }
     .btn-primary:hover { filter: brightness(1.05); }
     .btn-outline:hover { background: color-mix(in oklab, var(--brand-accent) 12%, #fff); }
+
     /* Sections */
     .section-title { text-align:center; font-size: 2em; margin: 0 0 18px; scroll-margin-top: calc(var(--nav-h) + 16px); }
     .band { background: #ffffff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -52,11 +50,13 @@
     .card { background: var(--card-soft); border:1px solid var(--card-edge); border-radius:14px; padding:20px; }
     .icon { width:56px; height:56px; border-radius:50%; background: var(--brand-accent); margin:0 auto 10px; }
     .muted { opacity:.8; }
+
     /* Tables */
     .price-table { width:100%; border-collapse: collapse; font-size: 15px; }
     .price-table th, .price-table td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,.08); text-align:left; }
     .price-table thead th { background: rgba(0,0,0,.06); font-weight: 800; }
     .price-table tr:nth-child(even) td { background: rgba(0,0,0,.03); }
+
     /* Floating Contact */
     .fab { position: fixed; right: 16px; bottom: 16px; display:grid; gap:10px; z-index:1002; }
     .fab a { display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:800; border-radius:999px; padding:10px 14px; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
@@ -64,21 +64,50 @@
     .fab .tel { background: var(--brand-cta); color:#fff; }
     .fab .qr  { background:#ffffff; color: var(--brand-bg); border:1px solid rgba(0,0,0,.12); }
     .fab svg { width:18px; height:18px; }
+
     /* iframe */
     .iframe-wrap { border-radius: 14px; overflow:hidden; border:1px solid var(--line); }
     .iframe-wrap iframe { width:100%; height:420px; border:0; }
     footer { background:#111827; color:#e5e7eb; text-align:center; }
 
-    /* Photo wall */
-    #photos .photo-track { display:flex; flex-wrap:nowrap; gap:12px; overflow-x:auto; padding:8px 4px 16px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
-    #photos figure.card { min-width:320px; width:48%; max-width:520px; border-radius:14px; overflow:hidden; scroll-snap-align:start; }
-    #photos figcaption { padding:.75rem 1rem; color:#475569; }
+    /* Photo wall - common */
     #photos .photo-label{ display:inline-block; font-weight:800; letter-spacing:.2px; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(0,0,0,.08); background:#fff; color:#334155; margin:4px 0 10px; }
 
-    /* LINE QR */
-    .qr-wrap{ text-align:center; }
-    .qr-wrap img{ width:min(240px, 60vw); height:auto; border:1px solid var(--line); border-radius:12px; background:#fff; }
-    .qr-wrap .hint{ color:#64748b; font-size:.95rem; margin-top:.5rem; }
+    /* 大圖＋滑動（1F 與 2F 共用骨架） */
+    #photos .scroller{ position:relative; }
+    #photos .scroller .photo-track{
+      display:flex; gap:14px; overflow-x:auto; padding:8px 4px 16px;
+      scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+    }
+    #photos .scroller figure.card{
+      width:min(92vw, 1100px);
+      min-width:min(92vw, 1100px);
+      border-radius:14px; overflow:hidden;
+      border:1px solid rgba(0,0,0,.08);
+      background:#fff; scroll-snap-align:start;
+    }
+    #photos .scroller img{ display:block; width:100%; height:auto; }
+    #photos .scroller figcaption{ padding:.75rem 1rem; color:#475569; }
+
+    /* 左右快速捲動按鈕（桌機顯示、手機隱藏） */
+    #photos .scroller .nav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:#fff; border:1px solid rgba(0,0,0,.12); border-radius:999px;
+      padding:.5rem .7rem; cursor:pointer; user-select:none;
+      box-shadow:0 6px 16px rgba(0,0,0,.15);
+    }
+    #photos .scroller .prev{ left:4px; }
+    #photos .scroller .next{ right:4px; }
+    @media (hover:none){ #photos .scroller .nav{ display:none; } }
+
+    /* 桌機再放大一些 */
+    @media (min-width: 1280px){
+      #photos .scroller figure.card{
+        width:min(82vw, 1200px);
+        min-width:min(82vw, 1200px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -118,6 +147,7 @@
       <p class="muted">桃園 A17 捷運站前．全新開放式工作基地<br>📍 桃園市大園區領航北路四段310號1樓</p>
       <div class="cta">
         <a class="btn btn-primary" href="https://calendar.app.google/GZSgAZAVNV9HTG7D7" target="_blank" rel="noopener">開始預約</a>
+        <a class="btn btn-outline" href="#services">瀏覽所有商品</a>
       </div>
     </div>
   </header>
@@ -125,18 +155,18 @@
   <section id="services" class="band">
     <div class="container">
       <h2 class="section-title">空間與服務</h2>
-    <div class="grid grid-4">
-      <div class="card"><div class="icon"></div><h3>共享辦公室</h3><p class="muted">開放式工位／彈性入座</p></div>
-      <div class="card"><div class="icon"></div><h3>中大型會議室</h3><p class="muted">投影設備・白板・視訊會議</p></div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>運動空間</h3>
-        <p class="muted">啦啦隊／社團練舞・工作團隊暖身・員工健康活動</p>
+      <div class="grid grid-4">
+        <div class="card"><div class="icon"></div><h3>共享辦公室</h3><p class="muted">開放式工位／彈性入座</p></div>
+        <div class="card"><div class="icon"></div><h3>中大型會議室</h3><p class="muted">投影設備・白板・視訊會議</p></div>
+        <div class="card">
+          <div class="icon"></div>
+          <h3>Cheer/Dance Practice · Team Warm-ups · Employee Wellness</h3>
+          <p class="muted">啦啦隊／社團練舞・工作團隊暖身・員工健康活動（可時租／包時段）。</p>
+        </div>
+        <div class="card"><div class="icon"></div><h3>虛擬辦公室</h3><p class="muted">公司登記・郵件代收・轉接</p></div>
+        <div class="card"><div class="icon"></div><h3>借址登記</h3><p class="muted">合法地址・合規文件支援</p></div>
+        <div class="card"><div class="icon"></div><h3>日租／時租工位</h3><p class="muted">按天／按時彈性選擇</p></div>
       </div>
-      <div class="card"><div class="icon"></div><h3>虛擬辦公室</h3><p class="muted">公司登記・郵件代收・轉接</p></div>
-      <div class="card"><div class="icon"></div><h3>借址登記</h3><p class="muted">合法地址・合規文件支援</p></div>
-      <div class="card"><div class="icon"></div><h3>日租／時租工位</h3><p class="muted">按天／按時彈性選擇</p></div>
-    </div>
     </div>
   </section>
 
@@ -144,27 +174,35 @@
   <section id="photos">
     <div class="container">
       <h2 class="section-title">Spaces &amp; Services — Photo Wall</h2>
-      <p class="muted" style="text-align:center; margin:-6px 0 12px;">Swipe to browse. 所有圖片皆為實景拍攝。</p>
+      <p class="muted" style="text-align:center; margin:-6px 0 12px;">滑動瀏覽．所有圖片皆為實景拍攝</p>
 
-      <!-- 一樓：共享空間（原有相片） -->
+      <!-- 一樓：共享空間（大圖滑動） -->
       <div class="photo-label">一樓共享空間</div>
-      <div class="photo-track">
-        <figure class="card"><img src="assets/photos/space-01.jpg" alt="一樓｜開放式共享辦公區，升降桌與座位" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Open Desk Zone — adjustable desks</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-02.jpg" alt="一樓｜雙色卡座＋分隔側板" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Dual booth seating — navy & teal</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-03.jpg" alt="一樓｜綠色長椅卡座" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth bench — lime green</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-04.jpg" alt="一樓｜卡座左右分區" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth seating pair — navy & teal</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-05.jpg" alt="一樓｜卡座列與分隔" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Booth row with partitions</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-06.jpg" alt="一樓｜協作區雙椅與長桌" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Collaboration nook — two chairs & table</figcaption></figure>
-        <figure class="card"><img src="assets/photos/space-07.jpg" alt="一樓｜臨街落地窗，自然採光" loading="lazy" width="1600" height="1067" style="display:block; width:100%; height:auto;"><figcaption>一樓｜Street-front window & natural light</figcaption></figure>
+      <div class="scroller floor1">
+        <button class="nav prev" onclick="this.nextElementSibling.scrollBy({left:-600,behavior:'smooth'})">‹</button>
+        <div class="photo-track">
+          <figure class="card"><img src="assets/photos/space-01.jpg" alt="一樓｜開放式共享辦公區，升降桌與座位" loading="lazy"><figcaption>一樓｜Open Desk Zone</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-02.jpg" alt="一樓｜雙色卡座＋分隔側板" loading="lazy"><figcaption>一樓｜Dual booth seating</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-03.jpg" alt="一樓｜綠色長椅卡座" loading="lazy"><figcaption>一樓｜Booth bench</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-04.jpg" alt="一樓｜卡座左右分區" loading="lazy"><figcaption>一樓｜Booth seating pair</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-05.jpg" alt="一樓｜卡座列與分隔" loading="lazy"><figcaption>一樓｜Booth row</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-06.jpg" alt="一樓｜協作區雙椅與長桌" loading="lazy"><figcaption>一樓｜Collaboration nook</figcaption></figure>
+          <figure class="card"><img src="assets/photos/space-07.jpg" alt="一樓｜臨街落地窗，自然採光" loading="lazy"><figcaption>一樓｜Street-front window</figcaption></figure>
+        </div>
+        <button class="nav next" onclick="this.previousElementSibling.scrollBy({left:600,behavior:'smooth'})">›</button>
       </div>
 
-      <!-- 二樓：新空間（約 40 坪） -->
+      <!-- 二樓：新空間（約 40 坪，大圖滑動） -->
       <div class="photo-label">二樓照片（約 40 坪空間）</div>
-      <div class="photo-track">
-        <figure class="card"><img src="assets/photos/floor2-01.jpg" alt="二樓｜全景 A" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜全景 A</figcaption></figure>
-        <figure class="card"><img src="assets/photos/floor2-02.jpg" alt="二樓｜窗景與空間 B" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜窗景與空間 B</figcaption></figure>
-        <figure class="card"><img src="assets/photos/floor2-03.jpg" alt="二樓｜窗邊長景 C" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜窗邊長景 C</figcaption></figure>
-        <figure class="card"><img src="assets/photos/floor2-04.jpg" alt="二樓｜全景 D" loading="lazy" style="display:block; width:100%; height:auto;"><figcaption>二樓｜全景 D</figcaption></figure>
+      <div class="scroller floor2">
+        <button class="nav prev" onclick="this.nextElementSibling.scrollBy({left:-600,behavior:'smooth'})">‹</button>
+        <div class="photo-track">
+          <figure class="card"><img src="assets/photos/floor2-01.jpg" alt="二樓｜全景 A" loading="lazy"><figcaption>二樓｜全景 A</figcaption></figure>
+          <figure class="card"><img src="assets/photos/floor2-02.jpg" alt="二樓｜窗景與空間 B" loading="lazy"><figcaption>二樓｜窗景與空間 B</figcaption></figure>
+          <figure class="card"><img src="assets/photos/floor2-03.jpg" alt="二樓｜窗邊長景 C" loading="lazy"><figcaption>二樓｜窗邊長景 C</figcaption></figure>
+          <figure class="card"><img src="assets/photos/floor2-04.jpg" alt="二樓｜全景 D" loading="lazy"><figcaption>二樓｜全景 D</figcaption></figure>
+        </div>
+        <button class="nav next" onclick="this.previousElementSibling.scrollBy({left:600,behavior:'smooth'})">›</button>
       </div>
     </div>
   </section>
@@ -299,11 +337,11 @@
   <section id="line-qr" class="band">
     <div class="container">
       <h2 class="section-title">加入 LINE 咨詢</h2>
-      <div class="qr-wrap">
+      <div class="qr-wrap" style="text-align:center;">
         <a href="https://line.me/R/ti/p/%40metasky" target="_blank" rel="noopener" title="加入大耘 MetaSky 的 LINE">
-          <img src="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" alt="大耘 MetaSky LINE 官方帳號 QR Code">
+          <img src="https://qr-official.line.me/gs/M_501rtjom_GW.png?oat_content=qr" alt="大耘 MetaSky LINE 官方帳號 QR Code" style="width:min(240px,60vw);height:auto;border:1px solid var(--line);border-radius:12px;background:#fff;">
         </a>
-        <div class="hint">點擊或掃描 QR 加入好友：@metasky</div>
+        <div class="hint" style="color:#64748b;font-size:.95rem;margin-top:.5rem;">點擊或掃描 QR 加入好友：@metasky</div>
       </div>
     </div>
   </section>
@@ -314,63 +352,5 @@
       <p>© 2025 版權所有 · 大耘 MetaSky</p>
     </div>
   </footer>
-</body>
-</html>
-
-  <style>
-    :root{ --nav-h:56px; --ink:#111827; --muted:#475569; }
-    *{ box-sizing:border-box; } body{ margin:0; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--ink); }
-    header,section{ padding:44px 20px; } .container{ max-width:1100px; margin:0 auto; }
-    .nav{ position:sticky; top:0; background:#fff; border-bottom:1px solid rgba(0,0,0,.08); height:var(--nav-h); display:flex; align-items:center; gap:18px; padding:0 16px; z-index:10; }
-    .nav a{ text-decoration:none; color:#111827; font-weight:700; }
-    h1{ margin:0; font-size:1.6rem; }
-    .section-title{ text-align:center; font-size:2rem; margin:0 0 12px; }
-    .muted{ color:var(--muted); }
-    /* 2F photo wall */
-    #photos-2f .photo-track { display:flex; gap:12px; overflow-x:auto; padding:8px 4px 16px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
-    #photos-2f figure.card { min-width:320px; width:48%; max-width:520px; border-radius:14px; overflow:hidden; border:1px solid rgba(0,0,0,.08); background:#fff; scroll-snap-align:start; }
-    #photos-2f figcaption { padding:.75rem 1rem; color:#475569; }
-    #photos-2f img{ display:block; width:100%; height:auto; }
-    #photos-2f .photo-label{ display:inline-block; font-weight:800; letter-spacing:.2px; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(0,0,0,.08); background:#fff; color:#334155; margin:4px 0 10px; }
-  </style>
-</head>
-<body>
-  <nav class="nav">
-    <a href="#top">MetaSky</a>
-    <a href="#photos-2f">二樓照片</a>
-  </nav>
-
-  <a id="top"></a>
-  <header>
-    <div class="container">
-      <h1>二樓照片（約 40 坪空間）</h1>
-      <p class="muted">Swipe / 滑動瀏覽；圖片放置於 <code>assets/photos/</code></p>
-    </div>
-  </header>
-
-  <section id="photos-2f">
-    <div class="container">
-      <h2 class="section-title">2F Space · 約 40 坪</h2>
-      <div class="photo-label">二樓 · Panorama</div>
-      <div class="photo-track">
-        <figure class="card">
-          <img src="assets/photos/floor2-01.jpg" alt="二樓｜全景 A" loading="lazy">
-          <figcaption>二樓｜全景 A</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/floor2-02.jpg" alt="二樓｜窗景與空間 B" loading="lazy">
-          <figcaption>二樓｜窗景與空間 B</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/floor2-03.jpg" alt="二樓｜窗邊長景 C" loading="lazy">
-          <figcaption>二樓｜窗邊長景 C</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="assets/photos/floor2-04.jpg" alt="二樓｜全景 D" loading="lazy">
-          <figcaption>二樓｜全景 D</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
 </body>
 </html>
